@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocationsViewController : UIViewController
-
-@end
+@class LocationsViewController; // don't forget to add this line to avoid the "Expected a type..." error 😅
 
 @protocol LocationsViewControllerDelegate
 
@@ -18,4 +16,6 @@
 
 @end
 
-
+@interface LocationsViewController : UIViewController
+@property (weak, nonatomic) id<LocationsViewControllerDelegate> delegate;
+@end
